@@ -8,7 +8,10 @@ Introduction to Java Script and DOM
 Hosted at : 
 
 
-Hosted at - [Click Here to Go to assignment6-Chityala201 Page](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-Chityala201/cities)
+Hosted at - [Click Here to Go to assignment6-Chityala201 Page - author](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-Chityala201/author)
 
+Hosted at - [Click Here to Go to assignment6-Chityala201 Page - tips](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-Chityala201/tips)
+
+Hosted at - [Click Here to Go to assignment6-Chityala201 Page - cruise](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-Chityala201/cruise)
 
 Repo Github Link - [https://github.com/44-563-WebApps-F23/44563-webapps-f23-assignment6-Chityala201](https://github.com/44-563-WebApps-F23/44563-webapps-f23-assignment6-Chityala201)

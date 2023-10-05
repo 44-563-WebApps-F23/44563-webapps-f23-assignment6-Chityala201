@@ -41,12 +41,14 @@
         <div class="row">
             <div class="col-md"></div>
             <div class="col-md">
-                <input type="button" class="btn btn-success" onclick="checkAuthor()" value="Check the guess">
+                <input type="button" id="checkAuthorbtn" class="btn btn-success" onclick="checkAuthor()"
+                    value="Check the guess">
             </div>
             <div class="col-md"></div>
         </div>
     </form>
-    <p id="result">This text will be replaced </p>
+    <br>
+    <p id="result" class="text-info bg-light text-center">This text will be replaced </p>
     <br>
     <br>
     <div class="text-center">
@@ -63,18 +65,26 @@
             //confirmed = confirm("Are these the values? " + age + " and " + nick)
 
             out = document.getElementById("result")
-
-            if (name == guess) {
-                good++;
-                alert("You got it right");
-
-            } else {
-                oops++;
-                alert("Sorry");
-
+            if (oops == 7) {
+                alert("Sorry, ran out of guesses.");
+                document.getElementById("result").innerHTML = "Sorry, ran out of guesses";
+                document.getElementById("checkAuthorbtn").style.visibility = 'hidden';
             }
-            const resultElement = document.getElementById('result');
-            resultElement.textContent = `Good Count is: ${good}, Oops Count is: ${oops}`;
+            else {
+                if (name == guess) {
+                    good++;
+                    alert("You got it right");
+
+                } else {
+                    oops++;
+                    alert("Sorry");
+
+                }
+                const resultElement = document.getElementById('result');
+                resultElement.textContent = `Good Count is: ${good}, Oops Count is: ${oops}`;
+            }
+
+
         }
         var useImage = 1;
         function selectImage() {
