@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>goes on a cruise</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body style="padding: 1%;">
+
+    <h2>naresh chityala goes on a cruise</h2>
+
+    <form>
+        <div class="form-group">
+            <input type="checkbox" id="SharesCabinId" name="Shares_Cabin" value="True">
+            <label for="SharesCabinId">Shares Cabin</label><br><br>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="BreakfastId" name="Breakfast" value="True">
+            <label for="BreakfastId">Breakfast</label><br><br>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="PoolPassId" name="Pool Pass" value="False">
+            <label for="PoolPassId">Pool Pass</label><br><br>
+        </div>
+        <button class="btn btn-success" type="button" onclick="selectCruise()">Select a cruise</button>
+    </form>
+    <p id="chk_results">output will be displayed here.</p>
+
+    <br>
+    <form>
+        <div class="form-group">
+            <label for="days">Enter the number of days</label>
+            <input type="text" id="days" name="days"><br><br>
+        </div>
+        <div class="form-group">
+            <label for="price">Enter price</label>
+            <input type="text" id="price" name="price"><br><br>
+        </div>
+        <button class="btn btn-info" type="button" onclick="updateCruise()">Update the cruise</button>
+    </form>
+    <p id="cruise_results">output will be displayed here.</p>
+
+
+</body>
+
+</html>
+<script>
+    var my_cruise = {};
+    function selectCruise() {
+        my_cruise = {};
+        my_cruise.shared = document.getElementById("SharesCabinId").checked;
+        my_cruise.breakfast = document.getElementById("BreakfastId").checked;
+        my_cruise.pool = document.getElementById("PoolPassId").checked;
+        document.getElementById("chk_results").innerHTML = JSON.stringify(my_cruise);
+    }
+
+    function updateCruise() {
+        const days = document.getElementById('days').value;
+        const price = document.getElementById('price').value;
+
+        my_cruise["days"] = days;
+        my_cruise["price"] = price;
+
+        document.getElementById("cruise_results").innerHTML = JSON.stringify(my_cruise);
+    }
+</script>

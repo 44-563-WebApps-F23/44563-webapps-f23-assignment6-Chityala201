@@ -2,3 +2,13 @@
 # WebApps-F23-Assignment-6
 Introduction to Java Script and DOM
 
+
+
+
+Hosted at : 
+
+
+Hosted at - [Click Here to Go to assignment6-Chityala201 Page](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-Chityala201/cities)
+
+
+Repo Github Link - [https://github.com/44-563-WebApps-F23/44563-webapps-f23-assignment6-Chityala201](https://github.com/44-563-WebApps-F23/44563-webapps-f23-assignment6-Chityala201)

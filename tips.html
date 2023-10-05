@@ -37,8 +37,9 @@
             <p id="tip_result">This text will be replaced </p>
         </form>
     </div>
-<br>
-<br>
+    <br>
+    <hr>
+    <br>
     <div>
         <h4>Create a radio button group that switches between calculations</h4>
         <form>
@@ -57,13 +58,14 @@
                     <input type="radio" id="product" onclick="chooseOp()" name="arithmetic_operation"
                         value="product"><br><br>
                 </div>
-                <b><p id="calc_result">Arithmetic operations will be displayed here.</p></b>
+                <b>
+                    <p id="calc_result">Arithmetic operations will be displayed here.</p>
+                </b>
             </div>
         </form>
     </div>
-
-
-
+    <br>
+ 
 </body>
 
 <script>
@@ -97,6 +99,7 @@
         }
         document.getElementById("calc_result").innerHTML = `${chkoperation} of ${baseAmount} and ${tipPercent} is ${output}`;
     }
+
 </script>
 
 </html>
