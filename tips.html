@@ -30,29 +30,73 @@
                 <label for="tippercent">Enter the tip percent: </label>
                 <input type="number" id="tippercent" value="15"><br><br>
             </div>
-           
+
             <input type="button" onclick="tips()" value="Show tip">
-           <br>
-           <br>
+            <br>
+            <br>
             <p id="tip_result">This text will be replaced </p>
+        </form>
+    </div>
+<br>
+<br>
+    <div>
+        <h4>Create a radio button group that switches between calculations</h4>
+        <form>
+            <div class="row text-center">
+                <div class="col-md form-group">
+                    <label for="sum">sum</label>
+                    <input type="radio" id="sum" onclick="chooseOp()" name="arithmetic_operation" value="sum"><br><br>
+                </div>
+                <div class="col-md form-group">
+                    <label for="difference">diff</label>
+                    <input type="radio" id="difference" onclick="chooseOp()" name="arithmetic_operation"
+                        value="difference"><br><br>
+                </div>
+                <div class="col-md form-group">
+                    <label for="product">mult</label>
+                    <input type="radio" id="product" onclick="chooseOp()" name="arithmetic_operation"
+                        value="product"><br><br>
+                </div>
+                <b><p id="calc_result">Arithmetic operations will be displayed here.</p></b>
+            </div>
         </form>
     </div>
 
 
-    <script>
-
-        function tips() {
-            let baseAmount = parseFloat(document.getElementById("baseamount").value);
-            let tipPercent = parseFloat(document.getElementById("tippercent").value);
-            let myOutput = "";
-            for (var i = 0; i < 5; i++) {
-                const calculatedTip = baseAmount * (tipPercent + i * 4) / 100;
-                myOutput += `${tipPercent + i * 4}% is ${calculatedTip.toFixed(2)}; `;
-            }
-            document.getElementById("tip_result").innerHTML = "<b>Tips are:</b> " + myOutput;
-        }
-    </script>
 
 </body>
+
+<script>
+
+    function tips() {
+        let baseAmount = parseFloat(document.getElementById("baseamount").value);
+        let tipPercent = parseFloat(document.getElementById("tippercent").value);
+        let myOutput = "";
+        for (var i = 0; i < 5; i++) {
+            const calculatedTip = baseAmount * (tipPercent + i * 4) / 100;
+            myOutput += `${tipPercent + i * 4}% is ${calculatedTip.toFixed(2)}; `;
+        }
+        document.getElementById("tip_result").innerHTML = "<b>Tips are:</b> " + myOutput;
+    }
+
+    function chooseOp() {
+        let baseAmount = parseFloat(document.getElementById("baseamount").value);
+        let tipPercent = parseFloat(document.getElementById("tippercent").value);
+        let chkoperation = document.querySelector('input[name="arithmetic_operation"]:checked').value;
+        let output;
+        switch (chkoperation) {
+            case "sum":
+                output = baseAmount + tipPercent;
+                break;
+            case "difference":
+                output = baseAmount - tipPercent;
+                break;
+            case "product":
+                output = baseAmount * tipPercent;
+                break;
+        }
+        document.getElementById("calc_result").innerHTML = `${chkoperation} of ${baseAmount} and ${tipPercent} is ${output}`;
+    }
+</script>
 
 </html>
