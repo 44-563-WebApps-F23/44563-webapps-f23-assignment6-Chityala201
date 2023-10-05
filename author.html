@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Author Entry</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <br>
+    <h2 class="bg-secondary text-white" style="text-align: center;">Author Entry - Naresh Chityala</h2>
+    <br>
+    <form>
+        <div class="row form-group">
+            <div class="col-md"><label for="form1_name">The hidden author name: </label> </div>
+            <div class="col-md">
+                <input type="password" id="form1_name" name="form1_name" value='Dickens'>
+            </div>
+            <div class="col-md"></div>
+        </div>
+        <br>
+        <div class="row form-group">
+            <div class="col-md"> <label for="form1_guess">Guess the author: </label></div>
+            <div class="col-md">
+                <input type="text" id="form1_guess" name="form1_guess" autofocus>
+            </div>
+            <div class="col-md"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md"></div>
+            <div class="col-md">
+                <input type="button" class="btn btn-success" onclick="checkAuthor()" value="Check the guess">
+            </div>
+            <div class="col-md"></div>
+        </div>
+    </form>
+    <p id="result">This text will be replaced </p>
+    <br>
+    <br>
+    <div class="text-center">
+        <img id="img_city" style="height: 100px; width: 100px;" src="che.jpg" alt="Image of the cities"
+            onclick="selectImage()">
+    </div>
+    <script>
+        good = 0;
+        oops = 0;
+        function checkAuthor() {
+            console.log("Getting form values")
+            name = document.getElementById("form1_name").value
+            guess = document.getElementById("form1_guess").value
+            //confirmed = confirm("Are these the values? " + age + " and " + nick)
+
+            out = document.getElementById("result")
+
+            if (name == guess) {
+                good++;
+                alert("You got it right");
+
+            } else {
+                oops++;
+                alert("Sorry");
+
+            }
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = `Good Count is: ${good}, Oops Count is: ${oops}`;
+        }
+        var useImage = 1;
+        function selectImage() {
+            var image = document.getElementById("img_city");
+            switch (useImage) {
+                case 1:
+                    image.src = "Indr.jpg";
+                    useImage = 2;
+                    break;
+                case 2:
+                    image.src = "hyd.jpg";
+                    useImage = 3;
+                    break;
+                default:
+                    image.src = "che.jpg";
+                    useImage = 1;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
